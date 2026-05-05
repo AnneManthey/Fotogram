@@ -19,12 +19,12 @@ const myGallery = [
 function renderGallery (){
     let galleryPicturesRef = document.getElementById("galleryPictures");
     for (let index = 0; index < myGallery.length; index++){
-        galleryPicturesRef.innerHTML += getPicturesHtml();
+        galleryPicturesRef.innerHTML += getPicturesHtml(index);
     }
 }
 
-function getPicturesHtml(){
-    return '<button onclick="openDialog()" class="gallery_btn"><img class="gallery_img" src= "${myGallery[index]}" /></button>';
+function getPicturesHtml(index){
+    return `<button onclick="openDialog()" class="gallery_btn"><img class="gallery_img" src= "${myGallery[index]}" /></button>`;
 }
 
 
