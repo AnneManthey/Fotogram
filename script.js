@@ -19,8 +19,12 @@ const myGallery = [
 function renderGallery (){
     let galleryPicturesRef = document.getElementById("galleryPictures");
     for (let index = 0; index < myGallery.length; index++){
-        galleryPicturesRef.innerHTML += '<button onclick="openDialog()" class="gallery_btn"><img class="gallery_img" src= ${myGallery[index]} alt="Alaska"/></button>'
+        galleryPicturesRef.innerHTML += getPicturesHtml();
     }
+}
+
+function getPicturesHtml(){
+    return '<button onclick="openDialog()" class="gallery_btn"><img class="gallery_img" src= "${myGallery[index]}" /></button>';
 }
 
 
