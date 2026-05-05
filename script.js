@@ -16,6 +16,8 @@ const myGallery = [
     "./assets/img/11_winter.png"
 ];
 
+// Hauptseite Bildergalerie
+
 function renderGallery (){
     let galleryPicturesRef = document.getElementById("galleryPictures");
     for (let index = 0; index < myGallery.length; index++){
@@ -24,13 +26,20 @@ function renderGallery (){
 }
 
 function getPicturesHtml(index){
-    return `<button onclick="openDialog()" class="gallery_btn"><img class="gallery_img" src= "${myGallery[index]}" /></button>`;
+    return `<button onclick="openDialog(${index})" class="gallery_btn"><img class="gallery_img" src= "${myGallery[index]}" /></button>`;
 }
 
 
-
-function openDialog(){
+// Dialog Popup
+function openDialog(index){
     dialogRef.showModal();
+    
+    let dialogPictureRef = document.getElementById("dialogPicture");
+    dialogPictureRef.innerHTML += getPictureDialog(index);
+}
+
+function getPictureDialog(index){
+    return `<img class="dialog_img" src= "${myGallery[index]}" />`;
 }
 
 function closeDialog(){
