@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
+    <header class="page_header">
       <div>
         <img src="./assets/icons/Capa_1.png" alt="Fotogram icon" />
       </div>
@@ -23,35 +23,23 @@
       <article class="gallery">
         <h1>Your personal photo album</h1>
         <section class="gallery_pictures">
-          <button><img src="./assets/img/alaska.png" alt="Alaska"/></button>
-          <button><img src="./assets/img/anime.png" alt="Anime"/></button>
-          <button><img src="./assets/img/atmosphere.png" alt="Atmosphere"/></button>
-          <button>
-            <img src="./assets/img/blue_tit.png" alt="Blue Tit" />
-          </button>
-          <button>
-            <img src="./assets/img/hurricane.png" alt="Hurricane" />
-          </button>
-          <button><img src="./assets/img/lake.png" alt="Lake" /></button>
-          <button>
-            <img src="./assets/img/moorente.png" alt="Moor Duck" />
-          </button>
-          <button><img src="./assets/img/sea.png" alt="Sea" /></button>
-          <button>
-            <img src="./assets/img/snow_bunting.png" alt="Snow Bunting" />
-          </button>
-          <button>
-            <img src="./assets/img/snow_leopard.png" alt="Snoe Leopard" />
-          </button>
-          <button><img src="./assets/img/travel.png" alt="Mountains" /></button>
-          <button>
-            <img src="./assets/img/winter.png" alt="Tree in Winter" />
-          </button>
+          <button onclick="openDialog()"><img src="./assets/img/alaska.png" alt="Alaska"/></button>
+          <button onclick="openDialog()"><img src="./assets/img/anime.png" alt="Anime"/></button>
+          <button onclick="openDialog()"><img src="./assets/img/atmosphere.png" alt="Atmosphere"/></button>
+          <button onclick="openDialog()"><img src="./assets/img/blue_tit.png" alt="Blue Tit"/></button>
+          <button onclick="openDialog()"><img src="./assets/img/hurricane.png" alt="Hurricane"/></button>
+          <button onclick="openDialog()"><img src="./assets/img/lake.png" alt="Lake"/></button>
+          <button onclick="openDialog()"><img src="./assets/img/moorente.png" alt="Moor Duck"/></button>
+          <button onclick="openDialog()"><img src="./assets/img/sea.png" alt="Sea"/></button>
+          <button onclick="openDialog()"><img src="./assets/img/snow_bunting.png" alt="Snow Bunting"/></button>
+          <button onclick="openDialog()"><img src="./assets/img/snow_leopard.png" alt="Snoe Leopard"/></button>
+          <button onclick="openDialog()"><img src="./assets/img/travel.png" alt="Mountains"/></button>
+          <button onclick="openDialog()"><img src="./assets/img/winter.png" alt="Tree in Winter"/></button>
         </section>
       </article>
 
       <dialog id="photoDialog" class="dialog">
-        <header>
+        <header class="dialog_header">
           <h2>Platzhalter Name</h2>
           <button onclick="closeDialog()">
             <img src='./assets/icons/Close icon.svg alt="close icon"' />
@@ -62,7 +50,7 @@
           <img src="" alt="" />
         </section>
 
-        <footer>
+        <footer class="dialog_footer">
           <nav>
             <button>
               <img
@@ -82,7 +70,7 @@
       </dialog>
     </main>
 
-    <footer>
+    <footer class="page_footer">
       <div>
         <img src="./assets/icons/da_logo.png" alt="Developer Akademie Logo" />
       </div>
