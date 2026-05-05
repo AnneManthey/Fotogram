@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body onload="renderGallery()">
     <header class="page_header">
       <div>
         <img src="./assets/icons/Capa_1.png" alt="Fotogram icon" />
@@ -22,28 +22,26 @@
     <main>
       <article class="gallery">
         <h1>Your personal photo album</h1>
-        <section class="gallery_pictures">
-          <button onclick="openDialog()"><img src="./assets/img/alaska.png" alt="Alaska"/></button>
-          <button onclick="openDialog()"><img src="./assets/img/anime.png" alt="Anime"/></button>
-          <button onclick="openDialog()"><img src="./assets/img/atmosphere.png" alt="Atmosphere"/></button>
-          <button onclick="openDialog()"><img src="./assets/img/blue_tit.png" alt="Blue Tit"/></button>
-          <button onclick="openDialog()"><img src="./assets/img/hurricane.png" alt="Hurricane"/></button>
-          <button onclick="openDialog()"><img src="./assets/img/lake.png" alt="Lake"/></button>
-          <button onclick="openDialog()"><img src="./assets/img/moorente.png" alt="Moor Duck"/></button>
-          <button onclick="openDialog()"><img src="./assets/img/sea.png" alt="Sea"/></button>
-          <button onclick="openDialog()"><img src="./assets/img/snow_bunting.png" alt="Snow Bunting"/></button>
-          <button onclick="openDialog()"><img src="./assets/img/snow_leopard.png" alt="Snoe Leopard"/></button>
-          <button onclick="openDialog()"><img src="./assets/img/travel.png" alt="Mountains"/></button>
-          <button onclick="openDialog()"><img src="./assets/img/winter.png" alt="Tree in Winter"/></button>
+        <section id="galleryPictures" class="gallery_pictures">
+          <!-- <button onclick="openDialog()" class="gallery_btn"><img class="gallery_img" src="./assets/img/00_alaska.png" alt="Alaska"/></button>
+          <button onclick="openDialog()" class="gallery_btn"><img class="gallery_img" src="./assets/img/01_anime.png" alt="City at Night"/></button>
+          <button onclick="openDialog()" class="gallery_btn"><img class="gallery_img" src="./assets/img/02_atmosphere.png" alt="Stormy Clouds"/></button>
+          <button onclick="openDialog()" class="gallery_btn"><img class="gallery_img" src="./assets/img/03_blue_tit.png" alt="Blue Tit"/></button>
+          <button onclick="openDialog()" class="gallery_btn"><img class="gallery_img" src="./assets/img/04_hurricane.png" alt="Hurricane"/></button>
+          <button onclick="openDialog()" class="gallery_btn"><img class="gallery_img" src="./assets/img/05_lake.png" alt="Lake"/></button>
+          <button onclick="openDialog()" class="gallery_btn"><img class="gallery_img" src="./assets/img/06_moorente.png" alt="Moor Duck"/></button>
+          <button onclick="openDialog()" class="gallery_btn"><img class="gallery_img" src="./assets/img/07_sea.png" alt="Sea"/></button>
+          <button onclick="openDialog()" class="gallery_btn"><img class="gallery_img" src="./assets/img/08_snow_bunting.png" alt="Snow Bunting"/></button>
+          <button onclick="openDialog()" class="gallery_btn"><img class="gallery_img" src="./assets/img/09_snow_leopard.png" alt="Snoe Leopard"/></button>
+          <button onclick="openDialog()" class="gallery_btn"><img class="gallery_img" src="./assets/img/10_travel.png" alt="Mountains"/></button>
+          <button onclick="openDialog()" class="gallery_btn"><img class="gallery_img" src="./assets/img/11_winter.png" alt="Tree in Winter"/></button> -->
         </section>
       </article>
 
       <dialog id="photoDialog" class="dialog">
         <header class="dialog_header">
           <h2>Platzhalter Name</h2>
-          <button onclick="closeDialog()">
-            <img src='./assets/icons/Close icon.svg alt="close icon"' />
-          </button>
+          <button onclick="closeDialog()"><img src='./assets/icons/Close icon.svg alt="close icon"' /></button>
         </header>
 
         <section>
@@ -52,19 +50,9 @@
 
         <footer class="dialog_footer">
           <nav>
-            <button>
-              <img
-                src="./assets/icons/button_left.png"
-                alt="arrow to the left"
-              />
-            </button>
+            <button><img src="./assets/icons/button_left.png" alt="arrow to the left"/></button>
             <p>1/12</p>
-            <button>
-              <img
-                src="./assets/icons/button_right.png"
-                alt="arrow to the right"
-              />
-            </button>
+            <button><img src="./assets/icons/button_right.png" alt="arrow to the right"/></button>
           </nav>
         </footer>
       </dialog>

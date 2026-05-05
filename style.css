@@ -59,7 +59,7 @@ h1 {
   gap: 1rem;
 }
 
-.gallery_pictures button {
+.gallery_btn {
   padding: 0;
   border: none;
   background: none;
@@ -68,7 +68,7 @@ h1 {
   overflow: hidden;
 }
 
-.gallery_pictures img {
+.gallery_img {
   display: block;
   border: 2px solid rgba(18, 70, 88, 1);
   border-radius: 16px;
