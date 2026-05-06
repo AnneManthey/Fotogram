@@ -1,5 +1,6 @@
 
 const dialogRef = document.getElementById("photoDialog")
+let currentIndex = 0;
 
 const myGallery = [
     "./assets/img/00_alaska.png",
@@ -16,7 +17,7 @@ const myGallery = [
     "./assets/img/11_winter.png"
 ];
 
-const myTitles =[
+const myTitles = [
     "Alaska",
     "City at Night",
     "Thunderclouds",
@@ -45,8 +46,6 @@ function getPicturesHtml(index) {
 }
 
 
-
-
 // Dialog Popup
 
 function openDialog(index) {
@@ -57,28 +56,44 @@ function openDialog(index) {
 
     let dialogPictureRef = document.getElementById("dialogPicture");
     dialogPictureRef.innerHTML = getPictureDialog(index);
+
+//     let buttonBackRef = document.getElementById("buttonBack")
+//     let buttonForwardRef = document.getElementById("buttonForward")
+
+//     console.log(index);
+
+//    if (buttonBackRef.onclick=true){
+//     index++;
+//    }
+//    else if (buttonForwardRef.onclick=true){
+//     index--;
+//    }
+
+
 }
+
+
 
 
 function getPictureDialog(index) {
     return `<img class="dialog_img" src= "${myGallery[index]}" />`;
 }
 
-function getNamesDialog(index){
+function getNamesDialog(index) {
     return `<h2 class="dialog_nametag">${myTitles[index]}</h2>`;
 
 }
 
-function indexForward(index){
+function indexForward(index) {
     console.log(index);
-        index++;
-   
+    index++;
+
 }
 
-function closeDialog() {   
+function closeDialog() {
     dialogRef.close();
     dialogRef.classList.remove("opened");
-   
+
 }
 
 // Dialog Buttons vor/zurück
