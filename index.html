@@ -29,21 +29,21 @@
 
 
 
-      <dialog id="photoDialog" class="dialog">
+      <dialog id="photoDialog" class="photo_dialog">
         <header class="dialog_header">
           <!-- <h2>Platzhalter Name</h2> -->
-          <button onclick="closeDialog()" class="button_close"><img src="assets/icons/close_icon.svg" /></button>
+          <button onclick="closeDialog()" class="button_close"><img src="./assets/icons/close_icon.png " /></button>
         </header>
 
-        <section id="dialogPicture">
+        <section id="dialogPicture" class="dialog_picture">
           <img src="" alt="" />
         </section>
 
         <footer class="dialog_footer">
-          <nav>
-            <button><img src="./assets/icons/button_left.png" alt="arrow to the left"/></button>
-            <p>1/12</p>
-            <button><img src="./assets/icons/button_right.png" alt="arrow to the right"/></button>
+          <nav class="dialog_footer_nav">
+            <div><button><img src="./assets/icons/button_left.png" alt="arrow to the left"/></button></div>
+            <div><p>1/12</p></div>
+            <div><button><img src="./assets/icons/button_right.png" alt="arrow to the right"/></button></div>
           </nav>
         </footer>
       </dialog>

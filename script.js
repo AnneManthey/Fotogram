@@ -33,10 +33,12 @@ function getPicturesHtml(index) {
 // Dialog Popup
 
 function openDialog(index) {
+    
     dialogRef.showModal();
+    dialogRef.classList.add("opened");
 
     let dialogPictureRef = document.getElementById("dialogPicture");
-    dialogPictureRef.innerHTML += getPictureDialog(index);
+    dialogPictureRef.innerHTML = getPictureDialog(index);
 
 }
 
@@ -44,8 +46,8 @@ function getPictureDialog(index) {
     return `<img class="dialog_img" src= "${myGallery[index]}" />`;
 }
 
-function closeDialog() {
-    //dialogRef.empty();
+function closeDialog() {   
     dialogRef.close();
-
+    dialogRef.classList.remove("opened");
+   
 }
