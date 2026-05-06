@@ -16,6 +16,21 @@ const myGallery = [
     "./assets/img/11_winter.png"
 ];
 
+const myTitles =[
+    "Alaska",
+    "City at Night",
+    "Thunderclouds",
+    "Blue Tit",
+    "Hurricane",
+    "Lake",
+    "Moor Duck",
+    "Sea",
+    "Snow Bunting",
+    "Snow Leopard",
+    "Mountains",
+    "Winter Tree"
+];
+
 // Hauptseite Bildergalerie
 
 function renderGallery() {
@@ -26,8 +41,10 @@ function renderGallery() {
 }
 
 function getPicturesHtml(index) {
-    return `<button onclick="openDialog(${index})" class="gallery_btn"><img class="gallery_img" src= "${myGallery[index]}" /></button>`;
+    return `<button onclick="openDialog(${index})" class="gallery_btn"><img class="gallery_img" src= "${myGallery[index]}" alt= "${myTitles[index]}" /></button>`;
 }
+
+
 
 
 // Dialog Popup
@@ -35,14 +52,27 @@ function getPicturesHtml(index) {
 function openDialog(index) {
     dialogRef.showModal();
     dialogRef.classList.add("opened");
+    let galleryNamesRef = document.getElementById("dialogName");
+    galleryNamesRef.innerHTML = getNamesDialog(index);
 
     let dialogPictureRef = document.getElementById("dialogPicture");
     dialogPictureRef.innerHTML = getPictureDialog(index);
-
 }
+
 
 function getPictureDialog(index) {
     return `<img class="dialog_img" src= "${myGallery[index]}" />`;
+}
+
+function getNamesDialog(index){
+    return `<h2 class="dialog_nametag">${myTitles[index]}</h2>`;
+
+}
+
+function indexForward(index){
+    console.log(index);
+        index++;
+   
 }
 
 function closeDialog() {   
