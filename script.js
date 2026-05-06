@@ -33,7 +33,6 @@ function getPicturesHtml(index) {
 // Dialog Popup
 
 function openDialog(index) {
-    
     dialogRef.showModal();
     dialogRef.classList.add("opened");
 
@@ -51,3 +50,13 @@ function closeDialog() {
     dialogRef.classList.remove("opened");
    
 }
+
+// Dialog Buttons vor/zurück
+
+// function indexForward(index){
+//     index++;
+//     console.log(index);
+// }
+
+// function indexBack(){
+// }
