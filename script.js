@@ -1,6 +1,5 @@
 
-const dialogRef = document.getElementById("photoDialog")
-let currentIndex = 0;
+const dialogRef = document.getElementById("photoDialog");
 
 const myGallery = [
     "./assets/img/00_alaska.png",
@@ -19,7 +18,7 @@ const myGallery = [
 
 const myTitles = [
     "Alaska",
-    "City at Night",
+    "Anime City",
     "Thunderclouds",
     "Blue Tit",
     "Hurricane",
@@ -51,42 +50,60 @@ function getPicturesHtml(index) {
 function openDialog(index) {
     dialogRef.showModal();
     dialogRef.classList.add("opened");
-    let galleryNamesRef = document.getElementById("dialogName");
-    galleryNamesRef.innerHTML = getNamesDialog(index);
 
-    let dialogPictureRef = document.getElementById("dialogPicture");
-    dialogPictureRef.innerHTML = getPictureDialog(index);
-
-//     let buttonBackRef = document.getElementById("buttonBack")
-//     let buttonForwardRef = document.getElementById("buttonForward")
-
-//     console.log(index);
-
-//    if (buttonBackRef.onclick=true){
-//     index++;
-//    }
-//    else if (buttonForwardRef.onclick=true){
-//     index--;
-//    }
-
+    let dialogContent = document.getElementById("photoDialog");
+    dialogContent.innerHTML = getDialogContent(index);
 
 }
 
+function getDialogContent(index){
+    return `
+    <header class="dialog_header">
+          <div id="dialogName">
+          <h2 class="dialog_nametag">${myTitles[index]}</h2>
+          </div>
+          
+          <button onclick="closeDialog()" class="button_close"><img src="./assets/icons/close_icon.png " /></button>
+        </header>
 
+        <section id="dialogPicture" class="dialog_picture">
+          <img class="dialog_img" src= "${myGallery[index]}" />
+        </section>
 
-
-function getPictureDialog(index) {
-    return `<img class="dialog_img" src= "${myGallery[index]}" />`;
+        <footer class="dialog_footer">
+          <nav class="dialog_footer_nav">
+            <div><button onclick="indexBack(${index})" id="buttonBack"><img src="./assets/icons/button_left.png" alt="arrow to the left"/></button></div>
+            <div><p>${index+1} / ${myGallery.length}</p></div>
+            <div><button onclick="indexForward(${index})" id="buttonForward"><img src="./assets/icons/button_right.png" alt="arrow to the right"/></button></div>
+          </nav>
+        </footer>
+    `
 }
 
-function getNamesDialog(index) {
-    return `<h2 class="dialog_nametag">${myTitles[index]}</h2>`;
-
-}
 
 function indexForward(index) {
-    console.log(index);
     index++;
+    let dialogContent = document.getElementById("photoDialog");
+    if (index<myGallery.length){
+        dialogContent.innerHTML = getDialogContent(index);
+    }
+    else {
+        index=0;
+        dialogContent.innerHTML = getDialogContent(index);
+    }
+
+}
+
+function indexBack(index){
+    index--;
+    let dialogContent = document.getElementById("photoDialog");
+    if (index>0){
+        dialogContent.innerHTML = getDialogContent(index);
+    }
+    else if(index<0){
+        index=11;
+        dialogContent.innerHTML = getDialogContent(index);
+    }
 
 }
 
@@ -95,13 +112,3 @@ function closeDialog() {
     dialogRef.classList.remove("opened");
 
 }
-
-// Dialog Buttons vor/zurück
-
-// function indexForward(index){
-//     index++;
-//     console.log(index);
-// }
-
-// function indexBack(){
-// }
