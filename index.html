@@ -1,45 +1,43 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fotogram</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="./assets/icons/fotogram_icon.png"
-    />
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body onload="renderGallery()">
-    <header class="page_header">
-      <div>
-        <img src="./assets/icons/Capa_1.png" alt="Fotogram icon" />
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fotogram</title>
+  <link rel="icon" type="image/x-icon" href="./assets/icons/fotogram_icon.png" />
 
-    <main>
-      <article class="gallery">
-        <h1>Your personal photo album</h1>
-        <section id="galleryPictures" class="gallery_pictures">
-          <!-- <button onclick="openDialog()" class="gallery_btn"><img class="gallery_img" src="./assets/img/00_alaska.png" alt="Alaska"/></button> -->
-        </section>
-      </article>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
+<body onload="renderGallery()">
+  <header class="page_header">
+    <div>
+      <img src="./assets/icons/Capa_1.png" alt="Fotogram icon" />
+    </div>
+  </header>
 
-      <dialog id="photoDialog" class="photo_dialog">
-      </dialog>
-    </main>
+  <main>
+    <article class="gallery">
+      <h1>Your personal photo album</h1>
+      <section id="galleryPictures" class="gallery_pictures">
+      </section>
+    </article>
 
-    <footer class="page_footer">
-      <div>
-        <img src="./assets/icons/da_logo.png" alt="Developer Akademie Logo" />
-      </div>
-      <div>
-        <img src="./assets/icons/© 2023 Developer Akademie GmbH.png" alt="" />
-      </div>
-    </footer>
-  </body>
-  <script src="./script.js"></script>
+    <dialog id="photoDialog" class="photo_dialog">
+    </dialog>
+
+  </main>
+
+  <footer class="page_footer">
+    <div>
+      <img src="./assets/icons/da_logo.png" alt="Developer Akademie Logo" />
+    </div>
+    <div>
+      <img src="./assets/icons/© 2023 Developer Akademie GmbH.png" alt="" />
+    </div>
+  </footer>
+</body>
+<script src="./script.js"></script>
+
 </html>

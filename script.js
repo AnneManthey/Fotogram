@@ -73,7 +73,7 @@ function getDialogContent(index){
         <footer class="dialog_footer">
           <nav class="dialog_footer_nav">
             <div><button onclick="indexBack(${index})" id="buttonBack"><img src="./assets/icons/button_left.png" alt="arrow to the left"/></button></div>
-            <div><p>${index+1} / ${myGallery.length}</p></div>
+            <div><p class="dialog_counter">${index+1} / ${myGallery.length}</p></div>
             <div><button onclick="indexForward(${index})" id="buttonForward"><img src="./assets/icons/button_right.png" alt="arrow to the right"/></button></div>
           </nav>
         </footer>
@@ -97,12 +97,13 @@ function indexForward(index) {
 function indexBack(index){
     index--;
     let dialogContent = document.getElementById("photoDialog");
-    if (index>0){
+    if (index>=0){
         dialogContent.innerHTML = getDialogContent(index);
     }
     else if(index<0){
         index=11;
         dialogContent.innerHTML = getDialogContent(index);
+        
     }
 
 }
