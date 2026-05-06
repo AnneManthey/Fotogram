@@ -54,15 +54,14 @@ function openDialog(index) {
     let dialogContent = document.getElementById("photoDialog");
     dialogContent.innerHTML = getDialogContent(index);
 
+    // onkeydown(escape) = closeDialog();
+
 }
 
 function getDialogContent(index){
     return `
     <header class="dialog_header">
-          <div id="dialogName">
-          <h2 class="dialog_nametag">${myTitles[index]}</h2>
-          </div>
-          
+          <h2 id="dialogName"class="dialog_nametag">${myTitles[index]}</h2>
           <button onclick="closeDialog()" class="button_close"><img src="./assets/icons/close_icon.png " /></button>
         </header>
 
@@ -72,9 +71,9 @@ function getDialogContent(index){
 
         <footer class="dialog_footer">
           <nav class="dialog_footer_nav">
-            <div><button onclick="indexBack(${index})" id="buttonBack"><img src="./assets/icons/button_left.png" alt="arrow to the left"/></button></div>
-            <div><p class="dialog_counter">${index+1} / ${myGallery.length}</p></div>
-            <div><button onclick="indexForward(${index})" id="buttonForward"><img src="./assets/icons/button_right.png" alt="arrow to the right"/></button></div>
+            <button onclick="indexBack(${index})" id="buttonBack"><img src="./assets/icons/button_left.png" alt="arrow to the left"/></button>
+            <p class="dialog_counter">${index+1} / ${myGallery.length}</p>
+            <button onclick="indexForward(${index})" id="buttonForward"><img src="./assets/icons/button_right.png" alt="arrow to the right"/></button>
           </nav>
         </footer>
     `
