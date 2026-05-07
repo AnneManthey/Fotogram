@@ -1,4 +1,3 @@
-
 const dialogRef = document.getElementById("photoDialog");
 
 const myGallery = [
@@ -35,6 +34,7 @@ const myTitles = [
 
 function renderGallery() {
     let galleryPicturesRef = document.getElementById("galleryPictures");
+    galleryPicturesRef.innerHTML="";
     for (let index = 0; index < myGallery.length; index++) {
         galleryPicturesRef.innerHTML += getPicturesHtml(index);
     }
