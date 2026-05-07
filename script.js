@@ -62,7 +62,7 @@ function getDialogContent(index){
         </header>
 
         <section id="dialogPicture" class="dialog_picture">
-          <img class="dialog_img" src= "${myGallery[index]}" />
+          <img class="dialog_img" src= "${myGallery[index]}" alt="${myTitles[index]}" />
         </section>
 
         <footer class="dialog_footer">
@@ -95,7 +95,7 @@ function indexBack(index){
         dialogContent.innerHTML = getDialogContent(index);
     }
     else if(index<0){
-        index=11;
+        index = myGallery.length -1;
         dialogContent.innerHTML = getDialogContent(index);
     }
 }
