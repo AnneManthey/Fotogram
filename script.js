@@ -50,12 +50,8 @@ function getPicturesHtml(index) {
 function openDialog(index) {
     dialogRef.showModal();
     dialogRef.classList.add("photo_dialog_opened");
-
     let dialogContent = document.getElementById("photoDialog");
     dialogContent.innerHTML = getDialogContent(index);
-
-    // onkeydown(escape) = closeDialog();
-
 }
 
 function getDialogContent(index){
@@ -90,7 +86,6 @@ function indexForward(index) {
         index=0;
         dialogContent.innerHTML = getDialogContent(index);
     }
-
 }
 
 function indexBack(index){
@@ -102,15 +97,17 @@ function indexBack(index){
     else if(index<0){
         index=11;
         dialogContent.innerHTML = getDialogContent(index);
-        
     }
-
 }
 
 function closeDialog() {
     event.stopPropagation();
     dialogRef.close();
     dialogRef.classList.remove("photo_dialog_opened");
-    console.log("closecloseclose");
-
 }
+
+window.onclick = function(event) {
+    if (event.target == dialogRef) {
+        closeDialog();
+    }
+};

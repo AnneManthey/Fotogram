@@ -123,11 +123,11 @@ h1 {
   overflow: hidden;
 }
 
-.photo_dialog_opened::backdrop{
-background-color: rgb(59, 126, 148);
+.photo_dialog_opened::backdrop {
+  background-color: rgb(59, 126, 148);
   opacity: 0.5;
   transition: all 0.5s ease-in;
-} 
+}
 
 
 .dialog_picture {
@@ -147,6 +147,7 @@ background-color: rgb(59, 126, 148);
   background-color: rgba(9, 33, 42, 1);
   padding-bottom: 50px;
 }
+
 
 .dialog_footer {
   padding-top: 50px;
@@ -194,20 +195,20 @@ background-color: rgb(59, 126, 148);
   }
 
   .photo_dialog {
-  height: 700px;
-  width: 800px;
-  padding: 50px;
-  
-}
+    height: 700px;
+    width: 800px;
+    padding: 50px;
 
-.dialog_picture {
-  height: 400px;
-}
+  }
 
-.dialog_picture img {
-  max-height: 300px;
-  max-width: 300px;
-}
+  .dialog_picture {
+    height: 400px;
+  }
+
+  .dialog_picture img {
+    max-height: 300px;
+    max-width: 300px;
+  }
 
 }
 
@@ -229,20 +230,20 @@ background-color: rgb(59, 126, 148);
     gap: 50px;
   }
 
-.photo_dialog {
-  height: 800px;
- max-width: 500px;
-  padding: 50px;
-}
+  .photo_dialog {
+    height: 800px;
+    max-width: 500px;
+    padding: 50px;
+  }
 
-.dialog_picture {
-  height: 500px;
-}
+  .dialog_picture {
+    height: 500px;
+  }
 
-.dialog_picture img {
-  max-height: 300px;
-  max-width: 400px;
-}
+  .dialog_picture img {
+    max-height: 300px;
+    max-width: 400px;
+  }
 
 
 }
