@@ -30,11 +30,11 @@ const MY_TITLES = [
     "Winter Tree"
 ];
 
-// Hauptseite Bildergalerie
+// Creating main page gallery
 
 function renderGallery() {
     let galleryPicturesRef = document.getElementById("galleryPictures");
-    galleryPicturesRef.innerHTML="";
+    galleryPicturesRef.innerHTML = "";
     for (let index = 0; index < MY_GALLERY.length; index++) {
         galleryPicturesRef.innerHTML += getPicturesHtml(index);
     }
@@ -45,7 +45,7 @@ function getPicturesHtml(index) {
 }
 
 
-// Dialog Popup
+// Creating dialog content
 
 function openDialog(index) {
     DIALOG_REF.showModal();
@@ -54,7 +54,7 @@ function openDialog(index) {
     dialogContent.innerHTML = getDialogContent(index);
 }
 
-function getDialogContent(index){
+function getDialogContent(index) {
     return `
     <header class="dialog_header">
           <h2 id="dialogName"class="dialog_nametag">${MY_TITLES[index]}</h2>
@@ -68,34 +68,34 @@ function getDialogContent(index){
         <footer class="dialog_footer">
           <nav class="dialog_footer_nav">
             <button onclick="indexBack(${index})" id="buttonBack"><img src="./assets/icons/button_left.png" alt="arrow to the left"/></button>
-            <p class="dialog_counter">${index+1} / ${MY_GALLERY.length}</p>
+            <p class="dialog_counter">${index + 1} / ${MY_GALLERY.length}</p>
             <button onclick="indexForward(${index})" id="buttonForward"><img src="./assets/icons/button_right.png" alt="arrow to the right"/></button>
           </nav>
-        </footer>
-    `
+        </footer> `
 }
 
+// Dialog button function
 
 function indexForward(index) {
     index++;
     let dialogContent = document.getElementById("photoDialog");
-    if (index<MY_GALLERY.length){
+    if (index < MY_GALLERY.length) {
         dialogContent.innerHTML = getDialogContent(index);
     }
     else {
-        index=0;
+        index = 0;
         dialogContent.innerHTML = getDialogContent(index);
     }
 }
 
-function indexBack(index){
+function indexBack(index) {
     index--;
     let dialogContent = document.getElementById("photoDialog");
-    if (index>=0){
+    if (index >= 0) {
         dialogContent.innerHTML = getDialogContent(index);
     }
-    else if(index<0){
-        index = MY_GALLERY.length -1;
+    else if (index < 0) {
+        index = MY_GALLERY.length - 1;
         dialogContent.innerHTML = getDialogContent(index);
     }
 }
@@ -106,7 +106,7 @@ function closeDialog() {
     DIALOG_REF.classList.remove("photo_dialog_opened");
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == DIALOG_REF) {
         closeDialog();
     }
