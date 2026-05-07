@@ -49,7 +49,7 @@ function getPicturesHtml(index) {
 
 function openDialog(index) {
     dialogRef.showModal();
-    dialogRef.classList.add("opened");
+    dialogRef.classList.add("photo_dialog_opened");
 
     let dialogContent = document.getElementById("photoDialog");
     dialogContent.innerHTML = getDialogContent(index);
@@ -62,7 +62,7 @@ function getDialogContent(index){
     return `
     <header class="dialog_header">
           <h2 id="dialogName"class="dialog_nametag">${myTitles[index]}</h2>
-          <button onclick="closeDialog()" class="button_close"><img src="./assets/icons/close_icon.png " /></button>
+          <button onclick="closeDialog(event)" class="button_close"><img src="./assets/icons/close_icon.png " /></button>
         </header>
 
         <section id="dialogPicture" class="dialog_picture">
@@ -108,7 +108,9 @@ function indexBack(index){
 }
 
 function closeDialog() {
+    event.stopPropagation();
     dialogRef.close();
-    dialogRef.classList.remove("opened");
+    dialogRef.classList.remove("photo_dialog_opened");
+    console.log("closecloseclose");
 
 }

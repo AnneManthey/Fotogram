@@ -134,7 +134,6 @@ background-color: rgb(59, 126, 148);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
 }
 
 .dialog_picture img {
@@ -193,21 +192,17 @@ background-color: rgb(59, 126, 148);
     gap: 50px;
   }
 
-  .photo_dialog {
+  /* .photo_dialog {
   height: 700px;
   width: 800px;
   padding: 50px;
   
 }
 
-.dialog_picture {
-  height: 400px;
-}
-
 .dialog_picture img {
   max-height: 300px;
   max-width: 300px;
-}
+} */
 
 }
 
@@ -229,20 +224,16 @@ background-color: rgb(59, 126, 148);
     gap: 50px;
   }
 
-.photo_dialog {
+/* .photo_dialog {
   height: 800px;
  max-width: 500px;
   padding: 50px;
 }
 
-.dialog_picture {
-  height: 500px;
-}
-
 .dialog_picture img {
   max-height: 300px;
   max-width: 400px;
-}
+} */
 
 
 }
