@@ -144,11 +144,14 @@ h1 {
 
 .dialog_picture img {
   max-height: 400px;
+  max-width: 550px;
+  Object-fit: cover;
 }
 
 .dialog_header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: rgba(9, 33, 42, 1);
   padding-bottom: 50px;
 }
@@ -180,7 +183,48 @@ h1 {
   flex-shrink: 0;
 }
 
-@media screen and (max-width: 480px) {
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  main {
+    padding: 50px 32px;
+  }
+
+  .page_header {
+    padding: 0px 20px;
+    justify-content: center;
+  }
+
+  .gallery {
+    gap: 50px;
+  }
+
+  .photo_dialog {
+    height: 600px;
+    /* width: 800px; */
+    padding: 50px;
+  }
+
+  .dialog_picture {
+    height: 300px;
+  }
+
+  .dialog_picture img {
+    max-height: 300px;
+    max-width: 250px;
+  }
+
+  .dialog_nametag {
+  font-family: "Figtree";
+  font-size: 1rem;
+  padding-left: 8px;
+}
+}
+
+@media screen and (min-width: 401px ) and (max-width: 520px) {
   h1 {
     font-size: 2rem;
   }
@@ -214,13 +258,12 @@ h1 {
   }
 
   .dialog_nametag {
-  font-family: "Figtree";
-  font-size: 1rem;
+  font-size: 1.25rem;
   padding-left: 8px;
 }
 }
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
+@media screen and (min-width: 521px) and (max-width: 768px) {
   h1 {
     font-size: 2.5rem;
   }
