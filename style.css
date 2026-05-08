@@ -183,7 +183,6 @@ h1 {
   flex-shrink: 0;
 }
 
-
 @media screen and (max-width: 400px) {
   h1 {
     font-size: 2rem;
@@ -204,7 +203,6 @@ h1 {
 
   .photo_dialog {
     height: 600px;
-    /* width: 800px; */
     padding: 50px;
   }
 
@@ -218,13 +216,13 @@ h1 {
   }
 
   .dialog_nametag {
-  font-family: "Figtree";
-  font-size: 1rem;
-  padding-left: 8px;
-}
+    font-family: "Figtree";
+    font-size: 1rem;
+    padding-left: 8px;
+  }
 }
 
-@media screen and (min-width: 401px ) and (max-width: 520px) {
+@media screen and (min-width: 401px) and (max-width: 520px) {
   h1 {
     font-size: 2rem;
   }
@@ -244,7 +242,6 @@ h1 {
 
   .photo_dialog {
     height: 700px;
-    width: 800px;
     padding: 50px;
   }
 
@@ -258,9 +255,9 @@ h1 {
   }
 
   .dialog_nametag {
-  font-size: 1.25rem;
-  padding-left: 8px;
-}
+    font-size: 1.25rem;
+    padding-left: 8px;
+  }
 }
 
 @media screen and (min-width: 521px) and (max-width: 768px) {
@@ -283,7 +280,6 @@ h1 {
 
   .photo_dialog {
     height: 800px;
-    max-width: 500px;
     padding: 50px;
   }
 
@@ -321,8 +317,6 @@ h1 {
     padding: 75px 120px;
   }
 }
-
-@media screen and (min-width: 1280px) {}
 
 @media screen and (min-width: 1440px) {
   main {
