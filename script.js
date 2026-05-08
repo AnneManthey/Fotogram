@@ -16,14 +16,14 @@ const MY_GALLERY = [
 ];
 
 const MY_TITLES = [
-    "Alaska",
-    "Anime City",
+    "Mountain Ridge",
+    "Waterfalls",
     "Thunderclouds",
     "Blue Tit",
-    "Hurricane",
-    "Lake",
+    "Dunes",
+    "Glacier",
     "Moor Duck",
-    "Sea",
+    "Sunset",
     "Snow Bunting",
     "Snow Leopard",
     "Mountains",
