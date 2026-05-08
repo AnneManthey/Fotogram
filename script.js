@@ -1,6 +1,6 @@
 const DIALOG_REF = document.getElementById("photoDialog");
 
-const MY_GALLERY = [
+const GALLERY = [
     "./assets/img/00_alaska.png",
     "./assets/img/01_anime.png",
     "./assets/img/02_atmosphere.png",
@@ -15,7 +15,7 @@ const MY_GALLERY = [
     "./assets/img/11_winter.png"
 ];
 
-const MY_TITLES = [
+const TITLES = [
     "Mountain Ridge",
     "Waterfalls",
     "Thunderclouds",
@@ -30,22 +30,21 @@ const MY_TITLES = [
     "Winter Tree"
 ];
 
-// Creating main page gallery
+// Creating main page gallery:
 
 function renderGallery() {
-    let galleryPicturesRef = document.getElementById("galleryPictures");
-    galleryPicturesRef.innerHTML = "";
-    for (let index = 0; index < MY_GALLERY.length; index++) {
-        galleryPicturesRef.innerHTML += getPicturesHtml(index);
+    let galleryPictures = document.getElementById("galleryPictures");
+    galleryPictures.innerHTML = "";
+    for (let index = 0; index < GALLERY.length; index++) {
+        galleryPictures.innerHTML += getPicturesHtml(index);
     }
 }
 
 function getPicturesHtml(index) {
-    return `<button onclick="openDialog(${index})" class="gallery_btn"><img class="gallery_img" src= "${MY_GALLERY[index]}" alt= "${MY_TITLES[index]}" /></button>`;
+    return `<button onclick="openDialog(${index})" class="gallery_btn"><img class="gallery_img" src= "${GALLERY[index]}" alt= "${TITLES[index]}" /></button>`;
 }
 
-
-// Creating dialog content
+// Creating dialog content:
 
 function openDialog(index) {
     DIALOG_REF.showModal();
@@ -57,29 +56,29 @@ function openDialog(index) {
 function getDialogContent(index) {
     return `
     <header class="dialog_header">
-          <h2 id="dialogName"class="dialog_nametag">${MY_TITLES[index]}</h2>
+          <h2 id="dialogName"class="dialog_nametag">${TITLES[index]}</h2>
           <button onclick="closeDialog(event)" class="button_close"><img src="./assets/icons/close_icon.png " /></button>
         </header>
 
         <section id="dialogPicture" class="dialog_picture">
-          <img class="dialog_img" src= "${MY_GALLERY[index]}" alt="${MY_TITLES[index]}" />
+          <img class="dialog_img" src= "${GALLERY[index]}" alt="${TITLES[index]}" />
         </section>
 
         <footer class="dialog_footer">
           <nav class="dialog_footer_nav">
             <button onclick="indexBack(${index})" id="buttonBack"><img src="./assets/icons/button_left.png" alt="arrow to the left"/></button>
-            <p class="dialog_counter">${index + 1} / ${MY_GALLERY.length}</p>
+            <p class="dialog_counter">${index + 1} / ${GALLERY.length}</p>
             <button onclick="indexForward(${index})" id="buttonForward"><img src="./assets/icons/button_right.png" alt="arrow to the right"/></button>
           </nav>
         </footer> `
 }
 
-// Dialog button function
+// Dialog buttons:
 
 function indexForward(index) {
     index++;
     let dialogContent = document.getElementById("photoDialog");
-    if (index < MY_GALLERY.length) {
+    if (index < GALLERY.length) {
         dialogContent.innerHTML = getDialogContent(index);
     }
     else {
@@ -95,10 +94,12 @@ function indexBack(index) {
         dialogContent.innerHTML = getDialogContent(index);
     }
     else if (index < 0) {
-        index = MY_GALLERY.length - 1;
+        index = GALLERY.length - 1;
         dialogContent.innerHTML = getDialogContent(index);
     }
 }
+
+// Close dialog with button and click outside:
 
 function closeDialog() {
     event.stopPropagation();
@@ -110,4 +111,4 @@ window.onclick = function (event) {
     if (event.target == DIALOG_REF) {
         closeDialog();
     }
-};
+}
