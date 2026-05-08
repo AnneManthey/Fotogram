@@ -57,11 +57,11 @@ function getDialogContent(index) {
     return `
     <header class="dialog_header">
           <h2 id="dialogName"class="dialog_nametag">${TITLES[index]}</h2>
-          <button onclick="closeDialog(event)" class="button_close"><img src="./assets/icons/close_icon.png " /></button>
+          <button aria-haspopup="dialog" aria-controls="photoDialog" onclick="closeDialog(event)" class="button_close"><img src="./assets/icons/close_icon.png " /></button>
         </header>
 
         <section id="dialogPicture" class="dialog_picture">
-          <img class="dialog_img" src= "${GALLERY[index]}" alt="${TITLES[index]}" />
+          <img aria-labelledby="dialogName" class="dialog_img" src= "${GALLERY[index]}" alt="${TITLES[index]}" />
         </section>
 
         <footer class="dialog_footer">
